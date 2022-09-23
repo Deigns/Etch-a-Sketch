@@ -1,6 +1,8 @@
+body {
+    text-align: center;
+}
 .board {
-    display: flex;
-    flex-direction: column;
+
 }
 
 .row {
@@ -8,5 +10,11 @@
 }
 
 .subject {
+    height: 30px;
+    width: 30px;
+    border-style: solid;
+}
 
+.hover {
+    background-color: black;
 }
