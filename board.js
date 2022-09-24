@@ -1,26 +1,41 @@
-const board = document.createElement(`div`);
-let subjectGrid = [];
-let gridSize = 16;
-board.classList.add(`board`);
+let height;
+let length;
 
-
-for (let i = 0; i < gridSize; i++) {
-    let row = document.createElement('div');
-    row.classList.add(`row`);
-
-    for (let i = 0; i < gridSize; i++) {
-        let subject = document.createElement(`div`);
-        subject.classList.add(`subject`);
-        subject.addEventListener(`mouseover`, shiftToblack);
-        row.appendChild(subject);
-        subjectGrid.push(subject);
-    }
-
-    board.appendChild(row);
+startButton.addEventListener(`click`, setup);
+function setup () {
+    height = heightField.textContent;
+    length = lengthField.textContent;
 }
 
-document.body.appendChild(board);
+function start(){
+    content.remove();
+    let content = document.createElement(`div`);
+    let subjectGrid = [];
 
-function shiftToblack() {
-    this.classList.add(`hover`);
+    for (let i = 0; i < height; i++) {
+        let row = document.createElement('div');
+        row.classList.add(`row`);
+
+        for (let i = 0; i < length; i++) {
+            let subject = document.createElement(`div`);
+            subject.classList.add(`subject`);
+            subject.addEventListener(`mouseover`, shiftToblack);
+            subject.addEventListener('click', resetTile);
+            row.appendChild(subject);
+            subjectGrid.push(subject);
+        }
+
+        board.appendChild(row);
+    }
+
+    content.appendChild(board);
+
+
+    function shiftToblack() {
+        this.classList.add(`hover`);
+    }
+
+    function resetTile() {
+        this.classList.remove(`hover`);
+    }
 }
