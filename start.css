@@ -1,1 +1,18 @@
-body {text-align: center;}
+.header {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 60px;
+}
+
+.content {
+    text-align: center;
+}
+
+.input {
+    width: 40px;
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 10px;
+}

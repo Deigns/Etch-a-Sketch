@@ -6,12 +6,12 @@ function setup () {
     height = heightField.value;
     length = lengthField.value;
 
-    start();
+    newGrid();
 }
 
-function start(){
-    content.remove();
-    let board = document.createElement(`div`);
+function newGrid(){
+    board.remove();
+    board = document.createElement(`div`);
     board.classList.add(`board`);
     
     let tileGrid = [];
