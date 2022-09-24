@@ -7,7 +7,7 @@ content.classList.add(`content`);
 
 const gridSizeQ = document.createElement(`p`);
 gridSizeQ.classList.add('question');
-gridSizeQ.textContent = `Please enter grid dimensions`;
+gridSizeQ.textContent = `Please enter grid dimensions. Limit is 25`;
 content.appendChild(gridSizeQ);
 
 //create height input 
@@ -16,6 +16,7 @@ content.appendChild(heightInput);
 
 const heightLabel = document.createElement(`label`);
 heightLabel.setAttribute(`for`, `height`)
+heightLabel.textContent = `Height: `
 heightInput.appendChild(heightLabel);
 
 const heightField = document.createElement('input');
@@ -30,6 +31,7 @@ content.appendChild(lengthInput);
 
 const lengthLabel = document.createElement(`label`);
 lengthLabel.setAttribute(`for`, `length`)
+lengthLabel.textContent = `Length: `
 lengthInput.appendChild(lengthLabel);
 
 const lengthField = document.createElement('input');
@@ -42,6 +44,7 @@ const startButton = document.createElement('button');
 startButton.textContent = `Begin`;
 content.appendChild(startButton);
 
+//Reveal Elements
 document.body.appendChild(header);
 document.body.appendChild(content);
 

@@ -3,32 +3,36 @@ let length;
 
 startButton.addEventListener(`click`, setup);
 function setup () {
-    height = heightField.textContent;
-    length = lengthField.textContent;
+    height = heightField.value;
+    length = lengthField.value;
+
+    start();
 }
 
 function start(){
     content.remove();
-    let content = document.createElement(`div`);
-    let subjectGrid = [];
+    let board = document.createElement(`div`);
+    board.classList.add(`board`);
+    
+    let tileGrid = [];
 
     for (let i = 0; i < height; i++) {
         let row = document.createElement('div');
         row.classList.add(`row`);
 
         for (let i = 0; i < length; i++) {
-            let subject = document.createElement(`div`);
-            subject.classList.add(`subject`);
-            subject.addEventListener(`mouseover`, shiftToblack);
-            subject.addEventListener('click', resetTile);
-            row.appendChild(subject);
-            subjectGrid.push(subject);
+            let tile = document.createElement(`div`);
+            tile.classList.add(`subject`);
+            tile.addEventListener(`mouseover`, shiftToblack);
+            tile.addEventListener('click', resetTile);
+            row.appendChild(tile);
+            tileGrid.push(tile);
         }
 
         board.appendChild(row);
     }
 
-    content.appendChild(board);
+    document.body.appendChild(board);
 
 
     function shiftToblack() {
